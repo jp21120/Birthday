@@ -207,6 +207,15 @@ body {
   z-index: 3;
 }
 
+.hero-frame {
+  animation: heroGlow 3s ease-in-out infinite;
+}
+
+@keyframes heroGlow {
+  0%,100% { box-shadow: 0 30px 70px rgba(255,120,170,0.35); }
+  50% { box-shadow: 0 40px 90px rgba(255,120,170,0.55); }
+}
+
 /* hero + content */
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding-top:220px;text-align:center}
 .hero-box{background:rgba(255,255,255,.92);padding:80px 60px;border-radius:50px;max-width:720px;box-shadow:0 40px 80px rgba(231,84,128,.28)}
@@ -270,16 +279,19 @@ body {
 </header>
 
 <section class="hero">
-  <div class="hero-box">
-    <h1>Happy Birthday</h1>
-    <p>My cute little Bubble 🫧</p>
+  <div class="hero-frame">
+    <div class="hero-box">
+      <h1>Happy Birthday</h1>
+      <p>My cute little Bubble 🫧</p>
+    </div>
   </div>
 </section>
 
 <section class="section">
   <div class="card">
-    <h3>For You 💌</h3>
-    <p class="placeholder">Write your message here.</p>
+    <h3>My dear poorvi 💌</h3>
+    <p class="placeholder">Happiest birthday my sweet darling, I have been longing to write you this from so long. Never in my life did I ever think I was going to find a girl with a heart so so pure, a soul so naive, with so much love to give. I could never imagined that there will be a time in my life that I will talk to a girl everyday and now I can not imagine going through a day without talking to you, without answering your cute lil questions (mene kab mara baby), not listening to your sweet baby voice (keshe keshe is it?), not hearing your heart healing laughter, and never did I think that Id say this but not hearing someone call me babu sha? Oh god you've really made e fall in love. You may have fallen for me first baby but trust me I fell wayyyy harder, and I never ever plan on recovering from this fall. You made me such a gentle person, a person that so sweet and soft just for you and I can very confidently say you make me both soft and hard at the same time(Im coming for those doubles D's). I could go on for days telling you how much happier, stronger, better and amazing youve made me and I want to thank you for that my love, Thank you so much for being in my life, you complete me baby I love you from all my heart, my soul and my everything. I love you
+    From me to my sweetheart (Bubble) <3</p>
   </div>
   <div class="card">
     <h3>Her Moments 🌸</h3>
