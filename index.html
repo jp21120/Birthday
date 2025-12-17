@@ -8,57 +8,6 @@
 <title>Happy Birthday Poorvi 🌸</title>
 
 <style>
-.intro {
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(180deg, #ffd6e8, #ff9bbb);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.intro.hide {
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(1.04);
-}
-
-.intro-card {
-  background: rgba(255,255,255,0.9);
-  padding: 60px 70px;
-  border-radius: 28px;
-  text-align: center;
-  box-shadow: 0 40px 90px rgba(217,44,90,0.35);
-}
-
-.intro-card h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.6rem;
-  margin: 0;
-  color: #d92c5a;
-}
-
-.intro-card p {
-  margin: 14px 0 30px;
-  opacity: 0.7;
-}
-
-.intro-btn {
-  padding: 14px 44px;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #ff5c8a, #d92c5a);
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 18px 40px rgba(217,44,90,0.45);
-}
-
-.intro-btn:active {
-  transform: scale(0.97);
-}
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400&display=swap');
 
 /* ================= BIRKIN OPENER ================= */
@@ -157,8 +106,10 @@
 }
 
 /* ================= PAGE FADE ================= */
-.page { opacity: 0; transition: opacity 1s ease; }
-.page.show { opacity: 1; }
+.page {
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
 .page.show { opacity: 1; }
 
 /* ================= BASE BACKGROUND ================= */
@@ -274,15 +225,7 @@ body {
 </head>
 
 <body>
-    <!-- INTRO / OPENER -->
 
-<div class="intro" id="intro">
-  <div class="intro-card">
-    <h1>For Poorvi 💗</h1>
-    <p>Tap to continue</p> 
-    <button class="intro-btn" onclick="openSite()">Open</button>
-  </div>
-</div>
 <!-- 👜 BIRKIN OPENER -->
 <div class="bag-opener" id="bagOpener" onclick="openBag()" ontouchstart="openBag()">
   <div class="bag" id="bag">
@@ -292,7 +235,7 @@ body {
       <div class="bag-flap"><div class="bag-clasp"></div></div>
       <div class="bag-glow"></div>
     </div>
-    <div class="bag-text">Open your Birkin</div>
+    <div class="bag-text">For Poorvi</div>
   </div>
 </div>
 
@@ -372,11 +315,6 @@ function spawnBow(){
 }
 setInterval(spawnBow,100);
 </script>
-<script>
-function openSite() {
-  document.getElementById('intro').classList.add('hide');
-  document.getElementById('page').classList.add('show');
-}
-</script>
+
 </body>
 </html>
