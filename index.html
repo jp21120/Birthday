@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Poorvi 🌸</title>
+
+<style>
+.intro {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, #ffd6e8, #ff9bbb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.intro.hide {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.04);
+}
+
+.intro-card {
+  background: rgba(255,255,255,0.9);
+  padding: 60px 70px;
+  border-radius: 28px;
+  text-align: center;
+  box-shadow: 0 40px 90px rgba(217,44,90,0.35);
+}
+
+.intro-card h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  margin: 0;
+  color: #d92c5a;
+}
+
+.intro-card p {
+  margin: 14px 0 30px;
+  opacity: 0.7;
+}
+
+.intro-btn {
+  padding: 14px 44px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff5c8a, #d92c5a);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 18px 40px rgba(217,44,90,0.45);
+}
+
+.intro-btn:active {
+  transform: scale(0.97);
+}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400&display=swap');
+
+/* ================= BIRKIN OPENER ================= */
+.bag-opener {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, #ffe9f4, #ffd6ea);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 1s ease;
+}
+
+.bag-opener.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.bag {
+  position: relative;
+  width: 260px;
+  height: 200px;
+  cursor: pointer;
+  animation: float 4s ease-in-out infinite;
+}
+
+.bag-handle {
+  position: absolute;
+  top: -34px;
+  width: 90px;
+  height: 50px;
+  border: 6px solid #e9a7bf;
+  border-bottom: none;
+  border-radius: 50px 50px 0 0;
+}
+.bag-handle.left { left: 10px; }
+.bag-handle.right { right: 10px; }
+
+.bag-body {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #f7b3cc, #f39abf);
+  border-radius: 22px;
+  box-shadow: 0 40px 80px rgba(231,84,128,0.45);
+  overflow: hidden;
+}
+
+.bag-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background: linear-gradient(135deg, #f5a6c4, #ef8fb5);
+  transform-origin: top;
+  transition: transform 1s ease;
+  z-index: 2;
+}
+
+.bag-clasp {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 36px;
+  height: 28px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ffd36a, #e6b94d);
+}
+
+.bag-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.7), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.bag.open .bag-flap { transform: rotateX(140deg); }
+.bag.open .bag-glow { opacity: 1; }
+
+.bag-text {
+  position: absolute;
+  bottom: -50px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #b84b74;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ================= PAGE FADE ================= */
+.page { opacity: 0; transition: opacity 1s ease; }
+.page.show { opacity: 1; }
+.page.show { opacity: 1; }
+
+/* ================= BASE BACKGROUND ================= */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255,80,120,0.25), transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(255,140,180,0.25), transparent 50%),
+    linear-gradient(180deg, #ffe3f1 0%, #ffd1ea 45%, #ffc1e3 100%);
+  color: #6b2c44;
+  overflow-x: hidden;
+}
+
+/* ================= FLOATING BOWS (FIXED) ================= */
+.bow {
+  position: fixed;
+  bottom: -20px;
+  width: 14px;
+  height: 6px;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: -1; /* 🔑 FIX */
+}
+.bow::before,.bow::after {
+  content:"";
+  position:absolute;
+  width:8px;height:6px;
+  border-radius:50%;
+}
+.bow::before{left:-6px}
+.bow::after{right:-6px}
+.bow.red,.bow.red::before,.bow.red::after{background:#ff2f55}
+.bow.white,.bow.white::before,.bow.white::after{background:#fff}
+
+/* ================= HEADER ================= */
+.ribbon-header{
+  position:fixed;
+  top:26px;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  z-index:30;
+  pointer-events:none
+}
+.ribbon{
+  position:relative;
+  background:linear-gradient(135deg,#ff6f9f,#ff3f7f);
+  padding:26px 78px 30px;
+  border-radius:999px;
+  box-shadow:0 22px 55px rgba(255,70,120,.45),inset 0 2px 6px rgba(255,255,255,.35);
+  text-align:center
+}
+.ribbon::before,.ribbon::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  width:44px;
+  height:30px;
+  background:linear-gradient(135deg,#ff3f7f,#ff6f9f);
+  transform:translateY(-50%)
+}
+.ribbon::before{left:-32px;clip-path:polygon(100% 0,0 50%,100% 100%)}
+.ribbon::after{right:-32px;clip-path:polygon(0 0,100% 50%,0 100%)}
+.ribbon-flower{
+  position:absolute;
+  top:-26px;
+  left:50%;
+  transform:translateX(-50%);
+  width:54px;
+  height:54px;
+  background:radial-gradient(circle at 30% 30%,#fff,#ffd6e8);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+}
+.ribbon small{display:block;font-size:.78rem;letter-spacing:3px;color:#fff}
+.ribbon span{font-family:'Playfair Display',serif;font-size:2.6rem;color:#fff}
+
+/* ================= CONTENT LAYERS ================= */
+.hero,
+.section,
+.frame-section,
+.footer {
+  position: relative;
+  z-index: 2;
+}
+
+.card,
+.hero-box,
+.photo-frame {
+  position: relative;
+  z-index: 3;
+}
+
+/* hero + content */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding-top:220px;text-align:center}
+.hero-box{background:rgba(255,255,255,.92);padding:80px 60px;border-radius:50px;max-width:720px;box-shadow:0 40px 80px rgba(231,84,128,.28)}
+.hero h1{font-family:'Playfair Display',serif;font-size:3.4rem;color:#e75480}
+.hero p{font-size:1.25rem;opacity:.75}
+.section{padding:100px 10%}
+.card{background:rgba(255,255,255,.95);padding:60px;border-radius:45px;margin-bottom:55px}
+.photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px}
+.photo-box{height:320px;border-radius:32px;background:linear-gradient(135deg,#ffd6ea,#ffe9f3);display:flex;align-items:center;justify-content:center}
+.frame-section{padding:120px 10% 140px;display:flex;justify-content:center}
+.photo-frame{background:#fff;padding:18px;border-radius:22px}
+.frame-border{background:linear-gradient(135deg,#ff6fae,#ff9ecb,#ff6fae);padding:14px;border-radius:18px}
+.frame-inner{width:260px;height:340px;background:linear-gradient(135deg,#ffe6f0,#fff);border-radius:12px;display:flex;align-items:center;justify-content:center}
+.footer{text-align:center;padding:45px;color:#a05a73}
+</style>
+</head>
+
+<body>
+    <!-- INTRO / OPENER -->
+
+<div class="intro" id="intro">
+  <div class="intro-card">
+    <h1>For Poorvi 💗</h1>
+    <p>Tap to continue</p> 
+    <button class="intro-btn" onclick="openSite()">Open</button>
+  </div>
+</div>
+<!-- 👜 BIRKIN OPENER -->
+<div class="bag-opener" id="bagOpener" onclick="openBag()" ontouchstart="openBag()">
+  <div class="bag" id="bag">
+    <div class="bag-handle left"></div>
+    <div class="bag-handle right"></div>
+    <div class="bag-body">
+      <div class="bag-flap"><div class="bag-clasp"></div></div>
+      <div class="bag-glow"></div>
+    </div>
+    <div class="bag-text">Open your Birkin</div>
+  </div>
+</div>
+
+<div class="page" id="page">
+
+<header class="ribbon-header">
+  <div class="ribbon">
+    <div class="ribbon-flower">🌸</div>
+    <small>Happy Birthday</small>
+    <span>Poorvi</span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-box">
+    <h1>Happy Birthday</h1>
+    <p>My cute little Bubble 🫧</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="card">
+    <h3>For You 💌</h3>
+    <p class="placeholder">Write your message here.</p>
+  </div>
+  <div class="card">
+    <h3>Her Moments 🌸</h3>
+    <div class="photos">
+      <div class="photo-box">Her photo here</div>
+      <div class="photo-box">Her photo here</div>
+    </div>
+  </div>
+</section>
+
+<section class="frame-section">
+  <div class="photo-frame">
+    <div class="frame-border">
+      <div class="frame-inner">Your favourite photo of her 💗</div>
+    </div> 
+  </div>
+</section>
+
+<div class="footer">Always your Bubble 🫧💗</div>
+
+</div>
+
+<script>
+const bag=document.getElementById('bag');
+const opener=document.getElementById('bagOpener');
+const page=document.getElementById('page');
+
+function openBag() {
+  if (bag.classList.contains('open')) return; // prevent double tap
+
+  bag.classList.add('open');
+
+  setTimeout(() => {
+    opener.classList.add('hide');
+    page.classList.add('show');
+  }, 700);
+}
+
+/* bows */
+const colors=['red','white'];
+function spawnBow(){
+  const bow=document.createElement('div');
+  bow.className='bow '+colors[Math.floor(Math.random()*colors.length)];
+  bow.style.left=Math.random()*100+'%';
+  const d=12+Math.random()*105;
+  bow.style.transition=`transform ${d}s linear, opacity ${d}s linear`;
+  document.body.appendChild(bow);
+  requestAnimationFrame(()=>{
+    bow.style.transform='translateY(-1000vh) rotate(1deg)';
+    bow.style.opacity='0';
+  });
+  setTimeout(()=>bow.remove(),d*1000);
+}
+setInterval(spawnBow,100);
+</script>
+<script>
+function openSite() {
+  document.getElementById('intro').classList.add('hide');
+  document.getElementById('page').classList.add('show');
+}
+</script>
+</body>
+</html>
