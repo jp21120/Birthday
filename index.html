@@ -214,14 +214,18 @@ body {
 .hero p{font-size:1.25rem;opacity:.75}
 .section{padding:100px 10%}
 .card{background:rgba(255,255,255,.95);padding:60px;border-radius:45px;margin-bottom:55px}
+
 .photos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  display: flex;
+  justify-content: center;   /* centers the boxes as a group */
+  align-items: center;
   gap: 30px;
-  justify-content: center; /* 🔑 THIS */
+  flex-wrap: wrap;           /* responsive on mobile */
 }
+
 .photo-box {
   height: 320px;
+  width: 260px;
   border-radius: 32px;
   background: linear-gradient(135deg, #ffd6ea, #ffe9f3);
   display: flex;
@@ -231,6 +235,7 @@ body {
   font-size: 1.1rem;
   color: #b05a78;
 }
+
 .frame-section{padding:120px 10% 140px;display:flex;justify-content:center}
 .photo-frame{background:#fff;padding:18px;border-radius:22px}
 .frame-border{background:linear-gradient(135deg,#ff6fae,#ff9ecb,#ff6fae);padding:14px;border-radius:18px}
