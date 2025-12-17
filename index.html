@@ -214,7 +214,12 @@ body {
 .hero p{font-size:1.25rem;opacity:.75}
 .section{padding:100px 10%}
 .card{background:rgba(255,255,255,.95);padding:60px;border-radius:45px;margin-bottom:55px}
-.photos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px}
+.photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  justify-content: center; /* 🔑 THIS */
+}
 .photo-box {
   height: 320px;
   border-radius: 32px;
@@ -284,7 +289,7 @@ body {
   <div class="photo-frame">
     <div class="frame-border">
       <div class="frame-inner">Your favourite photo of her 💗</div>
-      <div class="footer">Propaganda I fell so hard for ❤️</div>
+      <div class="frame-caption">Propaganda I fell so hard for ❤️</div>
     </div> 
   </div>
 </section>
