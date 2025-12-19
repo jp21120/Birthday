@@ -320,7 +320,11 @@ body {
 </section>
 
 <div class="footer">Forever yours🫧💗</div>
-
+<!-- 🐿️ EASTER EGG (ONLY AT END) -->
+<div id="squirrel-wrap">
+  <div id="squirrel-text">Finally caught you a squirrel, touch it</div>
+  <div id="squirrel">🐿️</div>
+</div>
 </div>
 
 <script>
@@ -372,16 +376,15 @@ setInterval(spawnBow,100);
   }
 
   /* 🐿️ SQUIRREL CONTAINER */
-  #squirrel-wrap {
-    position: fixed;
-    bottom: 40px;
-    left: -150px;
-    text-align: center;
-    animation: run 6s linear infinite;
-    cursor: pointer;
-    z-index: 9999;
-    user-select: none;
-  }
+#squirrel-wrap {
+  position: relative;
+  margin: 120px auto 80px;
+  width: fit-content;
+  text-align: center;
+  animation: run 6s linear infinite;
+  cursor: pointer;
+  user-select: none;
+}
 
   #squirrel-text {
     font-size: 14px;
@@ -396,9 +399,10 @@ setInterval(spawnBow,100);
     font-size: 48px;
   }
 
-  @keyframes run {
-    from { left: -150px; }
-    to   { left: 110%; }
+@keyframes run {
+  from { transform: translateX(-120px); }
+  to   { transform: translateX(120px); }
+}
   }
 
   /* 🪄 OVERLAY */
