@@ -356,6 +356,124 @@ function spawnBow(){
 }
 setInterval(spawnBow,100);
 </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Squirrel Easter Egg Demo</title>
 
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(180deg, #ffe3f1, #ffd1ea);
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* 🐿️ SQUIRREL CONTAINER */
+  #squirrel-wrap {
+    position: fixed;
+    bottom: 40px;
+    left: -150px;
+    text-align: center;
+    animation: run 6s linear infinite;
+    cursor: pointer;
+    z-index: 9999;
+    user-select: none;
+  }
+
+  #squirrel-text {
+    font-size: 14px;
+    color: #b84b74;
+    margin-bottom: 6px;
+    background: rgba(255,255,255,0.8);
+    padding: 6px 10px;
+    border-radius: 12px;
+  }
+
+  #squirrel {
+    font-size: 48px;
+  }
+
+  @keyframes run {
+    from { left: -150px; }
+    to   { left: 110%; }
+  }
+
+  /* 🪄 OVERLAY */
+  #overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 200, 220, 0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    text-align: center;
+  }
+
+  #overlay .card {
+    background: white;
+    padding: 28px;
+    border-radius: 28px;
+    border: 6px solid #ff9ecb;
+    box-shadow: 0 30px 80px rgba(231,84,128,0.45);
+  }
+
+  #overlay img {
+    max-width: 300px;
+    border-radius: 18px;
+    display: block;
+    margin: 0 auto 14px;
+  }
+
+  #overlay p {
+    font-size: 1.2rem;
+    color: #b05a78;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- 🐿️ RUNNING SQUIRREL -->
+<div id="squirrel-wrap">
+  <div id="squirrel-text">Finally caught you a squirrel, touch it</div>
+  <div id="squirrel">🐿️</div>
+</div>
+
+<!-- 🎀 MAKKA PAKKA REVEAL -->
+<div id="overlay">   
+  <div class="card">
+    <img src="A0411956-266E-4205-9E8F-50F12F943328.png" alt="Makka Pakka">
+    <p>Makka Pakka</p>
+
+    <!-- 🎵 SAFE DEMO AUDIO -->
+    <audio id="music" loop>
+      <source src="makka_pakka.mp3">
+    </audio>
+  </div>
+</div>
+
+<script>
+  const squirrelWrap = document.getElementById("squirrel-wrap");
+  const overlay = document.getElementById("overlay");
+  const music = document.getElementById("music");
+
+  squirrelWrap.addEventListener("click", () => {
+    squirrelWrap.style.display = "none";
+    overlay.style.display = "flex";
+    music.play().catch(() => {});
+  });
+
+  overlay.addEventListener("click", () => {
+    overlay.style.display = "none";
+    music.pause();
+  });
+</script>
+
+</body>
+</html>
 </body>
 </html>
