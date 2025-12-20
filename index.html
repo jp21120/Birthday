@@ -250,6 +250,62 @@ body {
 .frame-border{background:linear-gradient(135deg,#ff6fae,#ff9ecb,#ff6fae);padding:14px;border-radius:18px}
 .frame-inner{width:260px;height:340px;background:linear-gradient(135deg,#ffe6f0,#fff);border-radius:12px;display:flex;align-items:center;justify-content:center}
 .footer{text-align:center;padding:45px;color:#a05a73}
+/* 🐿️ EASTER EGG SQUIRREL */
+#squirrel-wrap {
+  margin: 100px auto 40px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;   /* 🔑 THIS FIXES IT */
+  z-index: 10;
+}
+#squirrel-text {
+  display: inline-block;        /* 🔑 KEY FIX */
+  font-size: 14px;
+  color: #b84b74;
+  margin-bottom: 8px;
+  background: rgba(255,255,255,0.9);
+  padding: 6px 12px;
+  border-radius: 999px;         /* cute pill shape */
+  width: auto;                  /* prevent stretching */
+  max-width: fit-content;       /* 🔑 stops full-width */
+  white-space: nowrap;          /* keeps it in one line */
+}
+#squirrel {
+  font-size: 42px;
+  animation: hop 1s infinite ease-in-out;
+}
+
+@keyframes hop {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* 🎀 MAKKA PAKKA OVERLAY */
+#overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(255,200,220,0.85);
+  z-index: 100000;
+  align-items: center;
+  justify-content: center;
+}
+
+#overlay .card {
+  background: white;
+  padding: 26px;
+  border-radius: 26px;
+  border: 6px solid #ff9ecb;
+  text-align: center;
+  box-shadow: 0 30px 80px rgba(231,84,128,0.45);
+}
+
+#overlay img {
+  max-width: 260px;
+  border-radius: 18px;
+  display: block;
+  margin: 0 auto 12px;
+}
 </style>
 </head>
 
@@ -320,6 +376,23 @@ body {
 </section>
 
 <div class="footer">Forever yours🫧💗</div>
+<!-- 🐿️ EASTER EGG -->
+<div id="squirrel-wrap">
+  <div id="squirrel-text">Finally caught you a squirrel, touch it</div>
+  <div id="squirrel">🐿️</div>
+</div>
+
+<!-- 🎀 MAKKA PAKKA OVERLAY -->
+<div id="overlay">
+  <div class="card">
+    <img src="A0411956-266E-4205-9E8F-50F12F943328.png" alt="Makka Pakka">
+    <p>Makka Pakka</p>
+
+    <audio id="music" loop>
+      <source src="makka_pakka.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+</div>
 </div>
 
 <script>
@@ -354,6 +427,21 @@ function spawnBow(){
   setTimeout(()=>bow.remove(),d*1000);
 }
 setInterval(spawnBow,100);
+// 🐿️ Easter Egg Logic
+const squirrel = document.getElementById("squirrel-wrap");
+const overlay = document.getElementById("overlay");
+const music = document.getElementById("music");
+
+squirrel.addEventListener("click", () => {
+  squirrel.style.display = "none";
+  overlay.style.display = "flex";
+  music.currentTime = 0; 
+  music.play().catch(() => {});
+});
+
+overlay.addEventListener("click", () => {
+  overlay.style.display = "none";
+  music.pause();
+});
 </script>
 </html>
-</body>
