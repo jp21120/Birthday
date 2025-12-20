@@ -421,7 +421,7 @@ function spawnBow(){
   bow.style.transition=`transform ${d}s linear, opacity ${d}s linear`;
   document.body.appendChild(bow);
   requestAnimationFrame(()=>{
-    bow.style.transform='translateY(-1000vh) rotate(1deg)';
+    bow.style.transform='translateY(-2500vh) rotate(1deg)';
     bow.style.opacity='0';
   });
   setTimeout(()=>bow.remove(),d*1000);
